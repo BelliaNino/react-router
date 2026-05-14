@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Items from '../utils/Items';
+import { Link } from 'react-router-dom';
 
 function Products() {
   const [item, setItem] = useState([]);
@@ -51,9 +52,12 @@ function Products() {
                   <div className="d-flex justify-content-between align-items-center mb-3">
                     <span className="fw-bold text-primary fs-5">${i.price}</span>
                   </div>
+                  
+                  <Link to={`/Products/${i.id}`}>
                   <button className="btn btn-outline-dark w-100 btn-sm fw-medium">
                     View Details
                   </button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
+import Items from '../utils/Items';
 
 function Products() {
-  const [items, setItems] = useState([]);
+  const [item, setItem] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-  fetch('https://fakestoreapi.com/products')
-    .then((res) => {
-      return res.json();
-    })
+  Items()
     .then((data) => {
-      setItems(data);
+      setItem(data);
       setLoading(false);
     })
     .catch(error => console.log(error));
@@ -30,7 +28,7 @@ function Products() {
       <h2 className="mb-4 text-center fw-bold">Our Products</h2>
       
       <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-        {items.map((i) => (
+        {item.map((i) => (
           <div className="col" key={i.id}>
             <div className="card h-100 shadow-sm border-0 py-3 px-2">
               <div className="d-flex align-items-center justify-content-center" style={{ height: '200px' }}>

@@ -19,7 +19,7 @@ function Structure() {
         
         <a className="navbar-brand d-flex align-items-center gap-3" href="/">
           <div className="logo-placeholder">
-            {/* Inserisci qui la tua icona/logo */}
+            
             <img style={{width:'80px', borderRadius:'50px'}} src={IconLogo} alt="Logo BB" />
           </div>
 
